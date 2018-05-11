@@ -57,6 +57,8 @@
 
   <script type="text/javascript" src="../script/getmuscles.js"></script>
 
+  <script type="text/javascript" src="../script/getFromDb.js"></script>
+
 
   <!-- Titolo -->
   <title>Pallestra</title>
@@ -75,8 +77,11 @@
 
         <ul style="padding: 0%;">
           <li>
-            <p>Nome Cognome </p>
-            <p>nickname</p>
+            <p id="name" style="float: left;"></p>
+            <p id="surname"></p>
+            <p id="nickname"></p>
+
+
           </li>
 
         </ul>
@@ -92,10 +97,10 @@
 
     </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9" >
 
       <div class="panel panel-default">
-        <div class="panel-heading">Scheda di Piera la zozza</div>
+        <div id="panel-heading" class="panel-heading"> <!-- scheda di --></div>
 
         <div class="panel-body">
           <p>Scheda valida dal millemila al duemilamille</p>
@@ -155,45 +160,40 @@
 
 
   <map name="image-map">
+    
     <area id="tronco" target="" alt="Tronco" title="Tronco" href="" coords="143,379,88,352,92,306,78,251,80,189,147,174,209,189,207,253,197,306,199,353"
-      shape="poly" >
+      shape="poly">
     <area target="" alt="Gambe" title="Gambe" href="" coords="82,387,75,443,82,501,93,563,93,606,108,670,114,714,133,716,139,629,132,580,137,518,143,470,139,416,109,387"
       shape="poly">
     <area target="" alt="Gambe" title="Gambe" href="" coords="153,414,182,385,205,382,214,414,220,448,218,488,215,522,209,552,205,575,195,609,181,635,173,662,153,659,155,628,156,583,168,561,164,522,155,485,151,454"
       shape="poly">
     <area target="" alt="Braccia" title="Braccia" href="" coords="90,160,65,165,53,173,48,183,45,197,45,212,44,227,39,243,37,261,34,275,27,288,24,309,22,336,21,359,19,370,39,368,46,339,57,315,63,291,63,278,69,259,75,242,77,192,92,175"
-      shape="poly" onClick="muss(event)">
+      shape="poly" onClick="muss()">
     <area target="" alt="Braccia" title="Braccia" href="" coords="217,163,235,168,241,179,246,191,247,202,247,212,249,224,253,238,256,255,261,274,266,283,269,297,269,311,269,322,269,335,267,353,267,368,251,367,248,350,241,325,237,301,234,287,228,266,221,250,217,234,215,216,214,200,208,180"
       shape="poly" onClick="muss(event)">
 
   </map>
 
+
   <script>
-/*
 
-    function muss(event) {
-      event.preventDefault();
+   /* var name = "Piera";
+    var surname = "La Zozza";
+    var nickname = "Elenella";*/
 
-      $("#tablebody").empty();
+     var name = getCookie('name');
+    var surname =getCookie('surname');
+    var nickname = getCookie('nickname');
 
-      for (var i = 0; i < 3; i++) {
+    $(document).ready(function () {
+      $('#name').text(name).append("&nbsp;");
+      $('#surname').text(surname);
+      $('#nickname').text(nickname);
+      $('#panel-heading').text("Scheda di " + nickname);
 
-        $("#tablebody").append("<tr>" +
-          " <th scope=\"row\">2</th>" +
-          "<td>Hammer</td>" +
-          "<td>Bicipite</td>" +
-          "<td>8</td>" +
-          "<td>4</td>" +
-          "<td>2'</td>" +
-          "<td>10kg</td>" +
-          "</tr>");
-
-      }
+    });
 
 
-    };
-
-*/
   </script>
 
   <!-- Optional JavaScript -->

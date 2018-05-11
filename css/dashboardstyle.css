@@ -33,6 +33,7 @@ body {
 
 
 .body-map {
+
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,25 +55,50 @@ body {
 
 .sidebar ul li{
     padding-top: 5%;
-color: whitesmoke;
-list-style: none;
-border-bottom: 1px solid;
+    color: whitesmoke;
+    list-style: none;
+    border-bottom: 1px solid;
 
 }
 
-.panel {
+.panel-heading {
     margin-top: 5%;
-    color: rgb(201, 24, 201);
+    color: rgb(46, 45, 46);
+    background: whitesmoke;
+    opacity: 0.6;
+    border-left: solid;
+    border-right: solid;
+    border-top: solid;
+    border-width: 5px;
+    padding: 2%;
+    width: 100%;
 }
 
-.img-fluid{
 
-    max-width: auto;
-    height: auto;
-    
-} 
+.panel-body {
+    color: rgb(46, 45, 46);
+    background: whitesmoke;
+    opacity: 0.6;
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-width: 5px;
+    padding-left: 2%;
+    width: 100%;
+}
+
+.table{
+
+    color: rgb(46, 45, 46);
+    background: whitesmoke;
+    opacity: 0.6;
+    border: solid;
+    border-width: 5px;
+    padding: 2%;
+    width: 100%;
+}
+
 
 .row{
-    height: auto;
     width: 100%;
 }
