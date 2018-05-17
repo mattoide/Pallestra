@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="IT">
+<html>
+<head>
+	<!--<?php include('header.php'); ?>-->
+  <title>Registrazione</title>
+  
+  <script type="text/javascript" language="JavaScript">
+
+var backgr1="img/sfondo01.jpg"
+var backgr2="img/sfondo02.gif"
+var backgr3="img/sfondo03.jpg"
+
+var cur=Math.round(6*Math.random())
+if (cur<=1)
+backgr=backgr1
+else if (cur<=4)
+backgr=backgr2
+else
+backgr=backgr3
+//document.write('<body background="'+backgr+'" bgcolor="#ffe4c4" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">')
+
+</script>
+</head>
+<body>
+<h1><a href="index.php">Home Page</a></h1>
+	
+<form action="register.php" method="POST">
+<table width="309" border="1" align="center">
+  <tr>
+    <td colspan="2"><b><span>New User Registration</span>
+  </b>
+  </td>
+  </tr>
+  <tr>
+    <td width="116"><div align="right">Username</div></td>
+    <td width="177"><input name="username" value="<?php echo $dispusername; ?>" type="text" /></td>
+    <td nowrap><span style="color:red"><?php echo $emptyuser;?></span></td>
+  </tr>
+  <tr>
+    <td><div align="right">Password</div></td>
+    <td><input name="password" type="password" /></td>
+    <td nowrap><span style="color:red"><?php echo $emptypass;?></span></td>
+  </tr>
+  <tr>
+    <td><div align="right">Retype Password</div></td>
+    <td><input name="repassword" type="password" /></td>
+    <td nowrap><span style="color:red"><?php echo $repass;?></span></td>
+  </tr>
+  <tr>
+    <td width="116"><div align="right">Fullname</div></td>
+    <td width="177"><input name="fullname" value="<?php echo $dispfullname; ?>" type="text" /></td>
+    <td nowrap><span style="color:red"><?php echo $emptyname;?></span></td>
+  </tr>
+  <tr>
+    <td width="116"><div align="right">Email</div></td>
+    <td width="177"><input name="email" value="<?php echo $dispemail; ?>" type="text" /></td>
+    <td nowrap><span style="color:red"><?php echo $emptyemail;?></span></td>
+  </tr>
+  <tr>
+	<td><a href="board.php">Accedi</a></td>
+	<td align="center"><input name="newuser" type="submit" value="Register" /></td>
+    <td nowrap><span style="color:red"><?php echo $infomsg;?></span></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

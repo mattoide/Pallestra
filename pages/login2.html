@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="IT">
+<html>
+	<head>
+    	<!--<?php include('header.php'); ?>-->
+		
+		<title>Login</title>
+	</head>
+	<body >
+
+		<h1><a href="index.php">Home</a></h1>
+		
+		<form action="board.php" method="POST">
+			<table width="309" border="1" align="center">
+		  		<tr>
+					<td colspan="2"><b><span>Bacheca</span></b></td>
+		  		</tr>
+		  		<tr>
+					<td width="116"><div align="right">Username</div></td>
+					<td width="177"><input name="username" type="text" /></td>
+					<td nowrap><span style="color:red"><?php echo $emptyuser;?></span></td>
+		  		</tr>
+		  		<tr>
+					<td><div align="right">Password</div></td>
+					<td><input name="password" type="password" /></td>
+					<td nowrap><span style="color:red"><?php echo $emptypass;?></span></td>
+		 		 </tr>
+		 		 <tr>
+					<td style="text-align:right"><a href="register.php">Registrati qui</a></td>
+					<td align="center"><input name="login" type="submit" value="Login" /></td>
+					<td nowrap><span style="color:red"><?php echo $infomsg;?></span></td>
+		 		 </tr>
+			</table>
+		</form>
+	</body>
+</html>

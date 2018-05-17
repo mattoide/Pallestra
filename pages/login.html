@@ -38,17 +38,17 @@
 
 <div class="container">
 
-        <form class="form-signin">
+        <form class="form-signin" action="../script/login.php" method="POST">
           <h2 class="form-signin-heading">Inserisci i tuoi dati, stupido bufu</h2>
         </br>
 
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
+          <label  class="sr-only">Username</label>
+          <input type="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
          
         </br>
 
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+          <input type="password" name="password" class="form-control" placeholder="Password" required="">
         </br>
 
           <div class="checkbox">
@@ -58,7 +58,7 @@
           </div>
         </br>
 
-          <button onClick="checkLogin(this.form)" class="btn btn-lg btn-primary btn-block btn-outline-danger">Entra</button>
+          <button type="submit" class="btn btn-lg btn-primary btn-block btn-outline-danger">Entra</button>
         </form>
   
       </div>
