@@ -1,3 +1,4 @@
+<?php require "../script/header.php"; ?>
 
 
 <!doctype html>
@@ -77,7 +78,7 @@
 
         <ul style="padding: 0%;">
           <li>
-            <p id="name" style="float: left;"></p>
+            <p id="name" style="float: left;"> </p>
             <p id="surname"></p>
             <p id="nickname"></p>
 
@@ -100,7 +101,7 @@
     <div class="col-sm-9" >
 
       <div class="panel panel-default">
-        <div id="panel-heading" class="panel-heading"> <!-- scheda di --></div>
+        <div id="panel-heading" class="panel-heading"> <!-- scheda di --> </div>
 
         <div class="panel-body">
           <p>Scheda valida dal millemila al duemilamille</p>
@@ -178,16 +179,14 @@
   
   <script>
 
+    var name = "<?php echo $_SESSION['name']; ?>";
+    var surname = "<?php echo $_SESSION['surname']; ?>";
+    var nickname = "<?php echo $_SESSION['nickname']; ?>";
 
-
-
-    var name ="Piera"
-    var surname = "La Zozza";
-    var nickname = "Elenella";
-
-    /* var name = getCookie('name');
-    var surname =getCookie('surname');
-    var nickname = getCookie('nickname');*/
+   /* var name = "dio";
+    var surname ="bestia";
+    var nickname = "cane";
+    */
 
     $(document).ready(function () {
       $('#name').text(name).append("&nbsp;");
@@ -196,7 +195,6 @@
       $('#panel-heading').text("Scheda di " + nickname);
 
     });
-
 
   </script>
 

@@ -15,22 +15,13 @@ session_start();
 }*/
 
 
-$emptyuser = "";
-$emptypass = "";
+
 $infomsg = "";
 
 
-
-   if (empty($_POST["username"]) || empty($_POST["password"]))
+   if (!isset($_POST["login"]))
    {
-      if (empty($_POST["username"]))
-      {
-        $emptyuser = "* Devi inserire un username"; 
-      }
-      if (empty($_POST["password"]))
-      {
-        $emptypass = "* Devi inserire una password";  
-      }
+    
    }
    else
    {
@@ -70,14 +61,19 @@ $infomsg = "";
 
 					session_write_close();
 
-			        header("Location: ../pages/dashboard.html");
+			        header("Location: ../pages/dashboard.php");
 					exit();
 			  	
 				
 			}
 			else {
 				$_SESSION['info'] = "Account o password errati";
-				print_r("accpasserr");
+					
+				session_write_close();
+
+				header("Location: ../pages/login.php");
+
+				
 			}
         }
     }
@@ -86,6 +82,7 @@ $infomsg = "";
 
 if(isset($_SESSION['info']))
 {
-  $infomsg = $_SESSION['info'];
+	$infomsg = $_SESSION['info'];
+	
   unset($_SESSION['info']);
 }

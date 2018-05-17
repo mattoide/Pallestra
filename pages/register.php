@@ -1,3 +1,6 @@
+<?php require "../script/register.php"; ?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -38,7 +41,7 @@
 
 <div class="container">
 
-        <form class="form-signin" action="../script/login.php" method="POST">
+        <form class="form-signin" action="../script/register.php" method="POST">
           <h2 class="form-signin-heading">Inserisci i tuoi dati, stupido bufu</h2>
         </br>
 
@@ -47,20 +50,34 @@
          
         </br>
 
+         <label  class="sr-only">Name</label>
+          <input type="name" name="name" class="form-control" placeholder="Name" required="" autofocus="">
+         
+        </br>
+
+         <label  class="sr-only">Surname</label>
+          <input type="surname" name="surname" class="form-control" placeholder="Surname" required="" autofocus="">
+         
+        </br>
+
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="E-mail" required=""> 
+      </br>
+
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" name="password" class="form-control" placeholder="Password" required="">
+          <input type="password" name="password" class="form-control" placeholder="Password" required=""> 
         </br>
 
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me"> Ricordami
-            </label>
-          </div>
+         <label for="inputPassword" class="sr-only">Retype password</label>
+          <input type="password" name="retypepassword" class="form-control" placeholder="Retype password" required=""> 
+          <span><p><?php echo $repass; ?></p></span>
+
+       </br>
+
         </br>
 
-          <button type="submit" class="btn btn-lg btn-primary btn-block btn-outline-danger">Entra</button>
+          <button name="register" value="Register" type="submit" class="btn btn-lg btn-primary btn-block btn-outline-danger">Registrati</button>
         </form>
-  
       </div>
 </body>
 
