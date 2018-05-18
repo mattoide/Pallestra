@@ -1,6 +1,8 @@
-<?php   
+<?php
+
 session_start(); 
 session_destroy();
-header("location:../index.html"); 
+
+header("Location:../index.html"); 
 exit();
 ?>

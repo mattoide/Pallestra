@@ -8,14 +8,30 @@ require_once('dbConn.php');
 session_start();
 
 
-if(isset($_SESSION['status']))
-{
-	session_write_close();
 
+
+/*
+$session_logout = 5; 
+
+if(isset($_SESSION['status'])) {
+//	session_write_close();
+
+if((time()-$_SESSION['session_time']) > $session_logout){
+
+	header('Location: ../script/logout.php');
+	exit();
+
+} else {
+	$_SESSION['session_time'] = time();
+
+	print_r("stong ca");
 	header('Location: ../pages/dashboard.php');
 	exit();
-} 
+}
 
+	
+} 
+*/
 
 
 
@@ -26,7 +42,7 @@ $infomsg = "";
    {
     
    }
-   else
+   else if (isset($_POST["login"])){
    {
 //aaaavv
 		$username = $_POST["username"];
@@ -62,24 +78,26 @@ $infomsg = "";
 					$_SESSION['surname'] = $surname;
 					$_SESSION['status'] = "Active";
 
-					session_write_close();
+					$_SESSION['session_time'] = time();
 
-			        header("Location: ../pages/dashboard.php");
+			        header("Location:../script/header.php");
 					exit();
 			  	
 				
 			}
 			else {
+
 				$_SESSION['info'] = "Account o password errati";
 					
 				session_write_close();
-
-				header("Location: ../pages/login.php");
-exit();
+				header("Location:../pages/login.php");
+				exit();
 				
 			}
         }
-    }
+	}
+	
+}
 
 
 
@@ -89,3 +107,4 @@ if(isset($_SESSION['info']))
 	
   unset($_SESSION['info']);
 }
+?>

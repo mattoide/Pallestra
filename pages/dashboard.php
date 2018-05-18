@@ -1,4 +1,6 @@
-<?php require "../script/header.php"; ?>
+<?php require "../script/login.php"; ?>
+
+<?php// include "../script/header.php";?>
 
 
 <!doctype html>
@@ -6,6 +8,7 @@
 
 
 <head>
+
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -202,10 +205,13 @@
   
   <script>
 
-    var name = "<?php echo $_SESSION['name']; ?>";
+  var name = "<?php echo $_SESSION['name']; ?>";
     var surname = "<?php echo $_SESSION['surname']; ?>";
     var nickname = "<?php echo $_SESSION['nickname']; ?>";
 
+
+
+   
    /* var name = "dio";
     var surname ="bestia";
     var nickname = "cane";
@@ -216,8 +222,15 @@
       $('#surname').text(surname);
       $('#nickname').text(nickname);
       $('#panel-heading').text("Scheda di " + nickname);
-
     });
+
+    var time = "<?php echo time(); ?>";
+
+if(time - $_SESSION['session_time'] > $_SESSION['logout_time']){
+
+ <?php header("Location:../script/logout.php");?>
+
+}
 
   </script>
 
