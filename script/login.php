@@ -8,11 +8,14 @@ require_once('dbConn.php');
 session_start();
 
 
-/*if(isset($_SESSION['username']))
+if(isset($_SESSION['status']))
 {
-	header('Location: index.php');
+	session_write_close();
+
+	header('Location: ../pages/dashboard.php');
 	exit();
-}*/
+} 
+
 
 
 
@@ -39,7 +42,7 @@ $infomsg = "";
 
 		$stmt->store_result();
 
-		$stmt->bind_result($nickname, $name, $surname, $pass);
+		$stmt->bind_result($nickname, $name, $surname, $email, $pass);
 
         if($execquery == false)
         {
@@ -72,7 +75,7 @@ $infomsg = "";
 				session_write_close();
 
 				header("Location: ../pages/login.php");
-
+exit();
 				
 			}
         }

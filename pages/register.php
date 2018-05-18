@@ -70,7 +70,7 @@
 
          <label for="inputPassword" class="sr-only">Retype password</label>
           <input type="password" name="retypepassword" class="form-control" placeholder="Retype password" required=""> 
-          <span><p><?php echo $repass; ?></p></span>
+          <span><p><?php echo $infomsg; ?></p></span>
 
        </br>
 
@@ -79,6 +79,20 @@
           <button name="register" value="Register" type="submit" class="btn btn-lg btn-primary btn-block btn-outline-danger">Registrati</button>
         </form>
       </div>
+
+      <script>
+
+var infomess = "<?php echo $infomsg; ?>";
+
+
+$(document).ready(function () {
+ 
+ if(infomess != "")
+ alert(infomess);
+
+});
+
+</script>
 </body>
 
 </html>

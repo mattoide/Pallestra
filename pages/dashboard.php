@@ -70,6 +70,29 @@
 
 <body>
 
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="padding:0%">
+  
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="../script/logout.php">
+              <span class="fas fa-sign-in-alt"></span> Logout </a>
+          </li>
+
+      </ul>
+    </div>
+  </nav>
+  
   <div class="row">
 
     <div class="col-sm-2" style="text-align: justify">

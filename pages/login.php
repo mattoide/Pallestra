@@ -68,6 +68,21 @@
           <button name="login" value="Login" type="submit" class="btn btn-lg btn-primary btn-block btn-outline-danger">Entra</button>
         </form>
       </div>
+
+
+      <script>
+
+var infomess = "<?php echo $infomsg; ?>";
+
+
+$(document).ready(function () {
+ 
+ if(infomess != "")
+ alert(infomess);
+
+});
+
+</script>
 </body>
 
 </html>

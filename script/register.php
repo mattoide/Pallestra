@@ -7,15 +7,19 @@ require_once('dbConn.php');
 
 session_start();
 
-if(isset($_SESSION['username']))
+if(isset($_SESSION['status']))
 {
-	
+
+  $_SESSION['info'] = "Devi effettuare prima il logout!";
+
+	session_write_close();
+
+	header('Location: ../pages/dashboard.php');
+	exit();
 }
 
-if(!isset($_SESSION['info']))
-{
-	$_SESSION['info'] = "";
-}
+
+$infomsg = "";
 
 $username = "";
 $name = "";
@@ -28,19 +32,15 @@ $repassword = "";
 
 if(isset($_POST["register"]))
 {
+    if ($_POST["password"] != $_POST["retypepassword"]){
 
-    
+      $_SESSION['info'] =  "Le password non coincidono";
+        session_write_close();
 
-  
-    
-    if ($_POST["password"] != $_POST["retypepassword"])
-    {
-      $repass = "* Le password non coincidono";
-    }
-    else
-    {
+				header("Location: ../pages/register.php");
+    }  else {
 
-      $username = $_POST["username"];
+    $username = $_POST["username"];
     $name = $_POST["name"];;
     $email = $_POST["email"];
     $surname = $_POST["surname"];
@@ -49,41 +49,65 @@ if(isset($_POST["register"]))
 
 	
     $stmt = $link->prepare("SELECT * FROM utente WHERE nickname = ?");
-
 		$stmt->bind_param('s', $username);
-
 		$execquery = $stmt->execute();
 
 		
-        if($execquery == false)
-        {
+        if($execquery == false) {
             $_SESSION['info'] = "C'è stato un errore di connesione, riprova più tardi";
-        }
-        else
-        {
+            session_write_close();
 
-			$acc=$stmt->fetch();  
+            header("Location: ../pages/register.php");
+        } else  {
+
+		  	$acc=$stmt->fetch();  
 			 
-			if($acc!=false) {
+			  if($acc!=false) {
+       
         $_SESSION['info'] = "Username già esistente";
-        print_r("user gia esistente");
-			}  
-			else
-			{
-        print_r("user ok");
-				$stmt = $link->prepare("INSERT INTO utente (nickname, nome, cognome, password) VALUES (?,?,?,?)");
-        $stmt->bind_param('ssss', $username, $name, $surname, $password);
+
+        session_write_close();
+
+        header("Location: ../pages/register.php");
+       }  else{
+
+        //controlla la mail
+        $stmt = $link->prepare("SELECT * FROM utente WHERE email = ?");
+        $stmt->bind_param('s', $email);
+        $execquery = $stmt->execute();
+    
+            if($execquery == false) {
+                $_SESSION['info'] = "C'è stato un errore di connesione, riprova più tardi";
+                session_write_close();
+    
+                header("Location: ../pages/register.php");
+            } else {
+
+              $acc=$stmt->fetch();  
+			 
+			  if($acc!=false) {
+       
+        $_SESSION['info'] = "Email già usata";
+
+        session_write_close();
+
+        header("Location: ../pages/register.php");
+       }  else{
+         
+
+         $stmt = $link->prepare("INSERT INTO utente (nickname, nome, cognome, email, password) VALUES (?,?,?,?,?)");
+        $stmt->bind_param('sssss', $username, $name, $surname, $email, $password);
 
         $res = $stmt->execute();                        
 
 				if($res == false) {
           $_SESSION['info'] = "Impossibile creare account";
-          print_r("impossible acc");
-          
+          session_write_close();
+
+          header("Location: ../pages/register.php");          
 				} else {
           $_SESSION['info'] = "Nuovo utente creato con successo. Logga usando i tuoi dati!";
-          print_r("user creato");
-
+          
          /* $_SESSION['nickname'] = $username;
 					$_SESSION['name'] = $name;
 					$_SESSION['surname'] = $surname;
@@ -95,10 +119,12 @@ if(isset($_POST["register"]))
           header("Location: ../pages/login.php");
 
 					exit();
-				}
-			}
-		}
+		  }
+     }
+    }
+   }
 	}
+ }
 }
 
 
