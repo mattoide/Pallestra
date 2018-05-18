@@ -28,7 +28,7 @@ $infomsg = "";
    }
    else
    {
-
+//aaaavv
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 	
