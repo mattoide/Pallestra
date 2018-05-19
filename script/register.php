@@ -12,7 +12,7 @@ if(isset($_SESSION['status']))
 
   $_SESSION['info'] = "Devi effettuare prima il logout!";
 
-	session_write_close();
+  session_write_close();
 
 	header('Location: ../pages/dashboard.php');
 	exit();

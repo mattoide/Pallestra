@@ -7,36 +7,16 @@ require_once('dbConn.php');
 
 session_start();
 
-
-
-
-/*
-$session_logout = 5; 
-
-if(isset($_SESSION['status'])) {
-//	session_write_close();
-
-if((time()-$_SESSION['session_time']) > $session_logout){
-
-	header('Location: ../script/logout.php');
-	exit();
-
-} else {
-	$_SESSION['session_time'] = time();
-
-	print_r("stong ca");
-	header('Location: ../pages/dashboard.php');
-	exit();
-}
-
-	
-} 
-*/
-
-
+$session_logout = 10; 
 
 $infomsg = "";
 
+
+if(isset($_SESSION['status'])){
+	header("Location:../pages/dashboard.php");
+
+	exit();
+} else {
 
    if (!isset($_POST["login"]))
    {
@@ -78,9 +58,11 @@ $infomsg = "";
 					$_SESSION['surname'] = $surname;
 					$_SESSION['status'] = "Active";
 
+					$_SESSION['logout_time'] = $session_logout;
 					$_SESSION['session_time'] = time();
-
-			        header("Location:../script/header.php");
+					
+					header("Location:../pages/dashboard.php");
+					
 					exit();
 			  	
 				
@@ -91,6 +73,7 @@ $infomsg = "";
 					
 				session_write_close();
 				header("Location:../pages/login.php");
+
 				exit();
 				
 			}
@@ -99,7 +82,7 @@ $infomsg = "";
 	
 }
 
-
+}
 
 if(isset($_SESSION['info']))
 {

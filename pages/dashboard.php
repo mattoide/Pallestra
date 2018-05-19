@@ -1,4 +1,4 @@
-<?php require "../script/login.php"; ?>
+<?php session_start();//require "../script/header.php"; ?>
 
 <?php// include "../script/header.php";?>
 
@@ -63,15 +63,28 @@
 
   <script type="text/javascript" src="../script/getmuscles.js"></script>
 
-  <script type="text/javascript" src="../script/getFromDb.js"></script>
-
-
   <!-- Titolo -->
   <title>Pallestra</title>
 
 </head>
 
 <body>
+
+<script>
+
+   var time = "<?php echo time(); ?>";
+    var session_time = "<?php echo $_SESSION['session_time']; ?>";
+    var logout_time = "<?php echo $_SESSION['logout_time']; ?>";
+    var session_stat = "<?php echo $_SESSION['status'] ;?>";
+    
+    if(time - session_time > logout_time){
+    //alert("so passat");
+    location.href = "../script/logout.php";
+    
+    }
+
+
+</script>
 
 
 
@@ -209,14 +222,6 @@
     var surname = "<?php echo $_SESSION['surname']; ?>";
     var nickname = "<?php echo $_SESSION['nickname']; ?>";
 
-
-
-   
-   /* var name = "dio";
-    var surname ="bestia";
-    var nickname = "cane";
-    */
-
     $(document).ready(function () {
       $('#name').text(name).append("&nbsp;");
       $('#surname').text(surname);
@@ -224,13 +229,6 @@
       $('#panel-heading').text("Scheda di " + nickname);
     });
 
-    var time = "<?php echo time(); ?>";
-
-if(time - $_SESSION['session_time'] > $_SESSION['logout_time']){
-
- <?php header("Location:../script/logout.php");?>
-
-}
 
   </script>
 

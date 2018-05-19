@@ -1,6 +1,5 @@
 <?php require "../script/login.php"; ?>
 
-
 <!doctype html>
 <html lang="en">
 
@@ -73,7 +72,6 @@
       <script>
 
 var infomess = "<?php echo $infomsg; ?>";
-
 
 $(document).ready(function () {
  

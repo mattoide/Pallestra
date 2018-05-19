@@ -2,6 +2,19 @@
 
 session_start(); 
 
+if(isset($_SESSION['status'])) {
+    
+    header("Location:../pages/dashboard.php");
+        exit();
+    
+    } else {
+
+        header("Location:../pages/login.php");
+
+        
+        exit();
+    }
+
 /*
 $session_logout = 5; 
 $_SESSION['logout_time'] = 5;
