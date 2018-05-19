@@ -24,17 +24,12 @@
   <!-- JQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-  <script type="text/javascript" src="../script/getFromDb.js"></script>
-
-
-
   <!-- Titolo -->
   <title>Pallestra</title>
 
 </head>
 
 <body>
-
 
     </br>
 
@@ -49,9 +44,7 @@
          
         </br>
 
-        
         <span><p><?php echo $infomsg; ?></p></span>
-
 
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" name="password" class="form-control" placeholder="Password" required=""> 
@@ -71,16 +64,16 @@
 
       <script>
 
-var infomess = "<?php echo $infomsg; ?>";
+            var infomess = "<?php echo $infomsg; ?>";
 
-$(document).ready(function () {
+            $(document).ready(function () {
  
- if(infomess != "")
- alert(infomess);
+            if(infomess != "")
+           alert(infomess);
 
-});
+                });
 
-</script>
+      </script>
 </body>
 
 </html>

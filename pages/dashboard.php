@@ -1,14 +1,9 @@
-<?php session_start();//require "../script/header.php"; ?>
-
-<?php// include "../script/header.php";?>
-
+<?php session_start(); ?>
 
 <!doctype html>
 <html lang="en">
 
-
 <head>
-
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -38,10 +33,12 @@
   <script type="text/javascript" src="../script/jquery.rwdImageMaps.min.js"></script>
 
   <script type="text/javascript">
+
     $(function () {
       $('img[usemap]').rwdImageMaps();
 
     });
+
   </script>
 
   <!--necessary refresh page for resize image map :(( -->
@@ -78,18 +75,16 @@
     var session_stat = "<?php echo $_SESSION['status'] ;?>";
     
     if(time - session_time > logout_time){
-    //alert("so passat");
+
     location.href = "../script/logout.php";
     
     }
-
 
 </script>
 
 
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="padding:0%">
-  
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +93,6 @@
 
     <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-
 
           <li class="nav-item">
             <a class="nav-link" href="../script/logout.php">
@@ -120,13 +114,9 @@
             <p id="name" style="float: left;"> </p>
             <p id="surname"></p>
             <p id="nickname"></p>
-
-
           </li>
-
         </ul>
         <img src="../img/body_front.jpg" usemap="#image-map" class="img-fluid">
-
       </div>
 
 
