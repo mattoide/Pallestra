@@ -86,7 +86,10 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="padding:0%">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="margin: 3%;">
+    <!-- <a class="navbar-brand" href="#">
+      
+            <span class="fas fa-home"></span> Home </a>-->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -94,16 +97,17 @@
     </button>
 
     <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav">
 
-          <li class="nav-item">
-            <a class="nav-link" href="../script/logout.php">
-              <span class="fas fa-sign-in-alt"></span> Logout </a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../script/logout.php">
+            <span class="fas fa-sign-in-alt"></span> Logout </a>
+            </li>
 
       </ul>
     </div>
   </nav>
+
   
   <div class="row">
 
@@ -118,7 +122,7 @@
             <p id="nickname"></p>
           </li>
         </ul>
-        <img src="../img/body_front.jpg" usemap="#image-map" class="img-fluid">
+        <img src="../img/body_front.png" usemap="#image-map" class="img-fluid">
       </div>
 
 

@@ -26,12 +26,11 @@ if(isset($_SESSION['status'])){
    }
    else if (isset($_POST["login"])){
    {
-//aaaavv
+
 		$username = $_POST["username"];
 		$password = $_POST["password"];
+
 	
-		
-		
 		$stmt = $link->prepare("SELECT * FROM utente WHERE nickname = ? AND password = ?");
 
 		$stmt->bind_param('ss', $username, $password);
@@ -44,7 +43,6 @@ if(isset($_SESSION['status'])){
 
         if($execquery == false)
         {
-
             $_SESSION['info'] = "Oops, qualcosa non va. Riprova più tardi.";
         }
         else
@@ -55,7 +53,7 @@ if(isset($_SESSION['status'])){
 			{
 				
 					// Assegno i valori alle varibili di sessione
-					$_SESSION['nickname'] = $username;
+					$_SESSION['nickname'] = $nickname;
 					$_SESSION['name'] = $name;
 					$_SESSION['surname'] = $surname;
 					$_SESSION['status'] = "Active";
@@ -80,7 +78,6 @@ if(isset($_SESSION['status'])){
 
 				$_SESSION['info'] = "Account o password errati";
 					
-				session_write_close();
 				header("Location:../pages/login.php");
 
 				exit();

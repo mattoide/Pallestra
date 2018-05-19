@@ -4,10 +4,13 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100%; 
+        margin: 0;
     }
 
     body{
         background: transparent;
+        font-family: "collegiateHeavyOutlineMedium";
     }
 /*
 
@@ -34,3 +37,9 @@ body {
     color: red;
         
     }
+
+    @font-face {
+        font-family: collegiateHeavyOutlineMedium;
+        src: url(../fonts/collegiateHeavyOutlineMedium.ttf);
+    }
+    
