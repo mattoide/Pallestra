@@ -74,6 +74,8 @@
     var logout_time = "<?php echo $_SESSION['logout_time']; ?>";
     var session_stat = "<?php echo $_SESSION['status'] ;?>";
     
+    alert(time - session_time);
+    
     if(time - session_time > logout_time){
 
     location.href = "../script/logout.php";

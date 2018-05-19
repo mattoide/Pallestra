@@ -7,12 +7,14 @@ require_once('dbConn.php');
 
 session_start();
 
-$session_logout = 10; 
+$standard_session_logout = 3; 
+$long_session_logout = 10;
 
 $infomsg = "";
 
 
 if(isset($_SESSION['status'])){
+
 	header("Location:../pages/dashboard.php");
 
 	exit();
@@ -58,7 +60,14 @@ if(isset($_SESSION['status'])){
 					$_SESSION['surname'] = $surname;
 					$_SESSION['status'] = "Active";
 
-					$_SESSION['logout_time'] = $session_logout;
+
+					if(isset($_POST['rememberme']))
+						$_SESSION['logout_time'] = $long_session_logout;
+					 else
+						$_SESSION['logout_time'] = $standard_session_logout;
+
+					
+
 					$_SESSION['session_time'] = time();
 					
 					header("Location:../pages/dashboard.php");
