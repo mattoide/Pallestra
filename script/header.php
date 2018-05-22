@@ -4,7 +4,10 @@ session_start();
 
 if(isset($_SESSION['status'])) {
     
-    header("Location:../pages/dashboard.php");
+   // header("Location:../pages/dashboard.php");
+
+    header("Location:../checkScreenSize.html");
+
         exit();
     
     } else {

@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors','On');
 
-require_once('dbConn.php');
+require_once('../script/dbConn.php');
 
 session_start();
 

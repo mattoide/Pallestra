@@ -3,12 +3,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors','On');
 
-require_once('dbConn.php');
+require_once('../script/dbConn.php');
 
 session_start();
 
-$standard_session_logout = 3; 
-$long_session_logout = 10;
+$standard_session_logout = 900; 
+$long_session_logout = 86400;
 
 $infomsg = "";
 
@@ -68,7 +68,11 @@ if(isset($_SESSION['status'])){
 
 					$_SESSION['session_time'] = time();
 					
-					header("Location:../pages/dashboard.php");
+
+
+					header("Location:../script/checkScreenSize.html");
+
+					//header("Location:../pages/dashboard.php");
 					
 					exit();
 			  	

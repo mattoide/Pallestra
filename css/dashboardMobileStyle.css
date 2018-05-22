@@ -2,22 +2,22 @@ html {
     background: url("../img/gym1.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: 100%;
     background-size: cover;
     height: 100%; 
-        margin: 0;
+    margin: 0;
 
     }
 
     body{
+
         background-color: transparent;
-        
         font-family: "collegiateHeavyOutlineMedium";
-        height: 100%; 
-    margin: 0;
+       
 
     }
 .navbar{
+
     padding: 0%;
 }
 
@@ -67,6 +67,11 @@ body {
 
 }
 
+.schedaper{
+    padding-left: 2%;
+   
+}
+
 .panel-heading {
     margin-top: 5%;
     color: rgb(46, 45, 46);
@@ -89,7 +94,6 @@ body {
     border-right: solid;
     border-bottom: solid;
     border-width: 5px;
-    padding-left: 2%;
     width: 100%;
 }
 
@@ -112,4 +116,15 @@ body {
 @font-face {
     font-family: collegiateHeavyOutlineMedium;
     src: url(../fonts/collegiateHeavyOutlineMedium.ttf);
+}
+
+.dropdown-item, .dropdown-item:hover {
+    background: none;
+    color: white;
+    opacity: 1;
+}
+
+.dropdown-menu{
+    background: black!important;
+opacity: 0.7;
 }

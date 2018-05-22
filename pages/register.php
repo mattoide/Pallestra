@@ -1,7 +1,7 @@
 <?php require "../script/register.php"; ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -47,6 +47,10 @@
         <li class="nav-item">
           <a class="nav-link" href="../index.html">
             <span class="fas fa-home"></span> Home </a>
+</li>
+<li class="nav-item">
+          <a class="nav-link" href="../pages/login.php">
+            <span class="fas fa-sign-in-alt"></span> Accedi </a>
 </li>
 
       </ul>

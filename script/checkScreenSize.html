@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        /*    var maxheight = 1024;
+    var maxwidth = 768;
+    
+    
+    if((window.height < maxheight) || (window.width < maxwidth) || (screen.height < maxheight) || (screen.width < maxwidth)){
+        alert("mobile");
+    location.href = "../pages/dashboardMobile.php";
+    
+    } else {
+    
+        alert("dekstop");
+    location.href = "../pages/dashboard.php";
+    }*/
+
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) {
+            location.href = "../pages/dashboardMobile.php";
+        }
+        else {
+            location.href = "../pages/dashboard.php";
+        }
+
+
+    </script>
+</head>
+
+</html>
