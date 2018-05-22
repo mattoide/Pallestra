@@ -16,7 +16,7 @@ $execquery = $stmt->execute();
 
 $stmt->store_result();
 
-$stmt->bind_result($nickname, $name, $surname, $pass, $email);
+$stmt->bind_result($nickname, $pass, $id_scheda, $name, $surname, $email);
 
 if($execquery == false)
 {

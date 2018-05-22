@@ -81,7 +81,7 @@
 
     if(time - session_time > logout_time){
 
-    location.href = "../script/web/php/logout.php";
+    location.href = "../script/logout.php";
     
     }
 

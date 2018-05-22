@@ -39,7 +39,7 @@ if(isset($_SESSION['status'])){
 
 		$stmt->store_result();
 
-		$stmt->bind_result($nickname, $name, $surname, $email, $pass);
+		$stmt->bind_result($nickname, $pass, $id_scheda, $name, $surname, $email);
 
         if($execquery == false)
         {
