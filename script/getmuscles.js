@@ -6,7 +6,7 @@ function muss(event) {
 
     for (var i = 0; i < 3; i++) {
 
-      /*  $("#tablebody").append("<tr>" +
+       $("#tablebody").append("<tr>" +
             " <th scope=\"row\">2</th>" +
             "<td>Hammer</td>" +
             "<td>Bicipite</td>" +
@@ -16,16 +16,16 @@ function muss(event) {
             "<td>10kg</td>" +
             "</tr>");
 
-    }*/
+    
 
 
-    $("#tablebody").append("<tr>" +
+   /* $("#tablebody").append("<tr>" +
             
-            "<td>Hammer</td>" +
+            "<td>Hammerooo</td>" +
             "<td>8x4</td>" +
             "<td>2'</td>" +
             "<td>10kg</td>" +
-            "</tr>");
+            "</tr>");*/
 
     }
 

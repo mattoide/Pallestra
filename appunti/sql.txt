@@ -1,0 +1,1 @@
+quando creo entità creare prima quelle senza relazioni cioe che poossono esistere da sole.

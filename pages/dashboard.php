@@ -134,8 +134,9 @@
     <div class="col-sm-9" >
 
       <div class="panel panel-default">
-        <div id="panel-heading" class="panel-heading"> <!-- scheda di --> </div>
-
+        <div id="panel-heading" class="panel-heading"> <!-- scheda di --> <button style="float:right" type="button" class="btn btn-outline-danger">Aggiungi scheda</button>
+ </div>
+<div class="div" style="float:right">piu</div>
         <div class="panel-body">
           <p>Scheda valida dal millemila al duemilamille</p>
         </div>
@@ -231,7 +232,8 @@
       $('#name').text(name).append("&nbsp;");
       $('#surname').text(surname);
       $('#nickname').text(nickname);
-      $('#panel-heading').text("Scheda di " + nickname);
+      $('#panel-heading').prepend("Scheda di " + nickname);
+
     });
 
 

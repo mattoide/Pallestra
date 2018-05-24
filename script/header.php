@@ -6,7 +6,7 @@ if(isset($_SESSION['status'])) {
     
    // header("Location:../pages/dashboard.php");
 
-    header("Location:../checkScreenSize.html");
+    header("Location:../script/checkScreenSize.html");
 
         exit();
     
