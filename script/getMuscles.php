@@ -13,7 +13,7 @@ session_start();
 	if(isset($_POST["partecorpo"])){
 		$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ? AND partecorpo = ?");
 } else {
-$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ?);
+$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ?");
 }
 		$stmt->bind_param('ss', $username, $partecorpo);
 
