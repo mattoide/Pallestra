@@ -60,7 +60,6 @@
   </script>
 
   <script type="text/javascript" src="../script/getmuscles.js"></script>
-  <script type="text/javascript" src="../script/addMuscle.js"></script>
 
 
 
@@ -135,8 +134,7 @@
     <div class="col-sm-9" >
 
       <div class="panel panel-default">
-        <div id="panel-heading" class="panel-heading"> <!-- scheda di --><a class ="btn btn-outline-danger" onClick="add(event)" style="float:right">Aggiungi esercizio</a>
-
+        <div id="panel-heading" class="panel-heading"> <!-- scheda di --> <button style="float:right" type="button" class="btn btn-outline-danger">Aggiungi scheda</button>
  </div>
 <div class="div" style="float:right">piu</div>
         <div class="panel-body">
