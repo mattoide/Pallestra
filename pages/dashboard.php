@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
+
   <!-- FontAwesome CDN -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
     crossorigin="anonymous"></script>
@@ -22,6 +23,7 @@
 
   <!-- JQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 
   <!-- MAP Higlight -->
   <script type="text/javascript" src="../script/jquery.maphilight.min.js"></script>
@@ -61,6 +63,13 @@
 
   <script type="text/javascript" src="../script/getmuscles.js"></script>
   <script type="text/javascript" src="../script/addMuscle.js"></script>
+
+  <script type="text/javascript">
+
+
+
+
+  </script>
 
 
 
@@ -136,6 +145,7 @@
 
       <div class="panel panel-default">
         <div id="panel-heading" class="panel-heading"> <!-- scheda di --><a class ="btn btn-outline-danger" onClick="add(event)" style="float:right">Aggiungi esercizio</a>
+        <a class ="btn btn-outline-danger" onClick="dio()" style="float:right">PROVA</a>
 
  </div>
 <div class="div" style="float:right">piu</div>
@@ -156,6 +166,17 @@
           </thead>
           <tbody id="tablebody">
 
+      <!--  <tr>   
+
+        <th scope="row">1</th>
+       <td>    <select class="selectpicker">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+             </select></td>
+        </tr>
+
+-->
             <!-- <tr>
               <th scope="row">1</th>
               <td>Hamimer</td>
@@ -236,7 +257,13 @@
       $('#nickname').text(nickname);
       $('#panel-heading').prepend("Scheda di " + nickname);
 
+
+      
     });
+    
+
+
+
 
 
   </script>
@@ -248,6 +275,17 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+
+   
+<!-- SELECT PICKER CHE NON FNZIONANO
+    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+-->
+
 </body>
 
 </html>

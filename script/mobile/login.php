@@ -30,10 +30,10 @@ else
     {
 
         // Assegno i valori alle varibili di sessione
-        $_SESSION['nickname'] = $nickname;
+       /* $_SESSION['nickname'] = $nickname;
         $_SESSION['name'] = $name;
         $_SESSION['surname'] = $surname;
-        $_SESSION['status'] = "Active";
+        $_SESSION['status'] = "Active";*/
 
 
         /* if(isset($_POST['rememberme']))
@@ -52,7 +52,7 @@ else
         $data["email"] = $email;
         $data["nickname"] = $nickname;
 
-
+        http_response_code(200);
         echo json_encode($data);
 //echo "Nome = ". $name ." Cognome = ". $surname . " Nickname = ". $nickname . " Email = ". $email;
 
@@ -66,6 +66,7 @@ else
     }
     else {
 
+        http_response_code(400);
         echo "Account o password errati";
 
 
