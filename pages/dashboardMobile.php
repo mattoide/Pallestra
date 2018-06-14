@@ -59,7 +59,7 @@
 
   </script>
 
-  <script type="text/javascript" src="../script/getmuscles.js"></script>
+  <script type="text/javascript" src="../script/getmusclesMobile.js"></script>
 
 
   
@@ -120,16 +120,16 @@
                             <span >Braccia</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getSuperiori(event)">
                                 <span></span> Bicipiti 
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getSuperiori(event)">
                                 <span></span> Tricipiti 
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getSuperiori(event)">
                                 <span></span> Spalle 
                             </a>
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getSuperiori(event)">
                                 <span></span> Avambracci 
                             </a>
                             
@@ -143,16 +143,16 @@
                             <span >Tronco</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getTronco(event)">
                                 <span></span> Pettorali 
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getTronco(event)">
                                 <span></span> Addominali 
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getTronco(event)">
                                 <span></span> Dorsali 
                             </a>
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getTronco(event)">
                                 <span></span> Lombari 
                             </a>
                             
@@ -166,16 +166,16 @@
                             <span >Gambe</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getInferiori(event)">
                                 <span></span> Quaricipiti
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getInferiori(event)">
                                 <span></span> Quadricipiti femorali 
                             </a>
-                                <a class="dropdown-item" href="" onClick="muss(event)">
+                                <a class="dropdown-item" href="" onClick="getInferiori(event)">
                                 <span></span> Polpacci 
                             </a>
-                            <a class="dropdown-item" href="" onClick="muss(event)">
+                            <a class="dropdown-item" href="" onClick="getInferiori(event)">
                                 <span></span> Glutei 
                             </a>
                             
@@ -216,7 +216,7 @@
         <div id="panel-heading" class="panel-heading"> <!-- scheda di --> </div>
 
         <div class="panel-body">
-          <p id="schedaper" class="schedaper">Scheda per </p>
+          <!--<p id="schedaper" class="schedaper">Scheda per </p>-->
         </div>
         <table class="table">
           <thead>
@@ -227,46 +227,11 @@
               <th>Recupero</th>
               <th>Peso</th>
 
-             <!-- <th>#</th>
-              <th>Esercizio</th>
-              <th>Muscolo interessato</th>
-              <th>Ripetizioni</th>
-              <th>Serie</th>
-              <th>Recupero</th>
-              <th>Peso</th>-->
+            
             </tr>
           </thead>
           <tbody id="tablebody">
 
-            <!-- <tr>
-              <th scope="row">1</th>
-              <td>Hamimer</td>
-              <td>Bicipite</td>
-              <td>8</td>
-              <td>4</td>
-              <td>2'</td>
-              <td>10kg</td>
-            </tr>
-          
-            <tr>
-              <th scope="row">2</th>
-              <td>Hammer</td>
-              <td>Bicipite</td>
-              <td>8</td>
-              <td>4</td>
-              <td>2'</td>
-              <td>10kg</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Hammer</td>
-              <td>Bicipite</td>
-              <td>8</td>
-              <td>4</td>
-              <td>2'</td>
-              <td>10kg</td>
-            </tr>
-            -->
           </tbody>
         </table>
       </div>
