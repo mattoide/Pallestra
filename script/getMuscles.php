@@ -7,16 +7,19 @@ require_once('dbConn.php');
 
 session_start();
 
-        $username = $_POST["username"];
+		$username = $_POST["username"];
+		if(isset($_POST["partecorpo"])){
+
 		$partecorpo = $_POST["partecorpo"];
 
-	if(isset($_POST["partecorpo"])){
 		$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ? AND partecorpo = ?");
-} else {
-$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ?");
-}
 		$stmt->bind_param('ss', $username, $partecorpo);
 
+		} else {
+			$stmt = $link->prepare("SELECT nome, muscolo, ripetizioni, serie, recupero, peso FROM esercizio WHERE nomeutente = ?");
+
+			$stmt->bind_param('s', $username);
+	}
 		$execquery = $stmt->execute();
 
 		$stmt->store_result();

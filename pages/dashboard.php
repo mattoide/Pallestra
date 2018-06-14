@@ -62,7 +62,7 @@
   </script>
 
   <script type="text/javascript" src="../script/getmuscles.js"></script>
-  <script type="text/javascript" src="../script/addMuscle.js"></script>
+  <script type="text/javascript" src="../script/addExercise.js"></script>
 
   <script type="text/javascript">
 
@@ -115,6 +115,7 @@
 
       </ul>
   </nav>
+  
 
   
   <div class="row">
@@ -145,12 +146,11 @@
 
       <div class="panel panel-default">
         <div id="panel-heading" class="panel-heading"> <!-- scheda di --><a class ="btn btn-outline-danger" onClick="add(event)" style="float:right">Aggiungi esercizio</a>
-        <a class ="btn btn-outline-danger" onClick="dio()" style="float:right">PROVA</a>
+        <a class ="btn btn-outline-danger" onClick="getAllMuscles()" style="float:right">Mostra Tutti</a>
 
  </div>
-<div class="div" style="float:right">piu</div>
         <div class="panel-body">
-          <p>Scheda valida dal millemila al duemilamille</p>
+         <!-- <p>Scheda valida dal millemila al duemilamille</p>-->
         </div>
         <table class="table">
           <thead>
@@ -162,6 +162,8 @@
               <th>Serie</th>
               <th>Recupero</th>
               <th>Peso</th>
+              <th></th>
+
             </tr>
           </thead>
           <tbody id="tablebody">
@@ -206,8 +208,12 @@
               <td>10kg</td>
             </tr>
             -->
+
+
           </tbody>
+
         </table>
+
       </div>
 
     </div>
@@ -243,8 +249,7 @@
 
 </map>
 
- 
-  
+
   <script>
 
     var name = "<?php echo $_SESSION['name']; ?>";
@@ -256,9 +261,8 @@
       $('#surname').text(surname);
       $('#nickname').text(nickname);
       $('#panel-heading').prepend("Scheda di " + nickname);
-
-
-      
+  
+      getAllMuscles();
     });
     
 
@@ -278,14 +282,21 @@
 
 
    
-<!-- SELECT PICKER CHE NON FNZIONANO
+<!-- SELECT PICKER CHE NON FNZIONANO v 12
+
     
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-
 -->
 
+<!-- SELECT PICKER CHE NON FNZIONANO 13
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+-->
 </body>
 
 </html>

@@ -8,7 +8,7 @@ function getSuperiori(event){
         {     
          type:    'post',
          url:     '/Pallestra/script/getMuscles.php',
-         data:    '&username=' +$('#nickname').text()+ '&partecorpo=artisuperiori',
+         data:    '&username=' +$('#nickname').text()+ '&partecorpo=Braccia',
          //dataType: 'json',
          success: function(data) 
          {
@@ -28,8 +28,10 @@ function getSuperiori(event){
                  "<td>"+obj[i].muscolo+"</td>" +
                  "<td>"+obj[i].ripetizioni+"</td>" +
                  "<td>"+obj[i].serie+"</td>" +
-                 "<td>"+obj[i].recupero+"'"+"</td>" +
+                 "<td>"+obj[i].recupero+"</td>" +
                  "<td>"+obj[i].peso+"</td>" +
+                 "<td></td>" +
+
                  "</tr>");
      
          }
@@ -52,7 +54,7 @@ function getInferiori(event){
         {     
          type:    'post',
          url:     '/Pallestra/script/getMuscles.php',
-         data:    '&username=' +$('#nickname').text()+ '&partecorpo=artiinferiori',
+         data:    '&username=' +$('#nickname').text()+ '&partecorpo=Gambe',
          //dataType: 'json',
          success: function(data) 
          {
@@ -71,8 +73,10 @@ function getInferiori(event){
                  "<td>"+obj[i].muscolo+"</td>" +
                  "<td>"+obj[i].ripetizioni+"</td>" +
                  "<td>"+obj[i].serie+"</td>" +
-                 "<td>"+obj[i].recupero+"'"+"</td>" +
+                 "<td>"+obj[i].recupero+"</td>" +
                  "<td>"+obj[i].peso+"</td>" +
+                 "<td></td>" +
+
                  "</tr>");
      
          }
@@ -94,7 +98,7 @@ function getTronco(event){
         {     
          type:    'post',
          url:     '/Pallestra/script/getMuscles.php',
-         data:    '&username=' +$('#nickname').text()+ '&partecorpo=tronco',
+         data:    '&username=' +$('#nickname').text()+ '&partecorpo=Tronco',
          //dataType: 'json',
          success: function(data) 
          {
@@ -113,8 +117,57 @@ function getTronco(event){
                  "<td>"+obj[i].muscolo+"</td>" +
                  "<td>"+obj[i].ripetizioni+"</td>" +
                  "<td>"+obj[i].serie+"</td>" +
-                 "<td>"+obj[i].recupero+"'"+"</td>" +
+                 "<td>"+obj[i].recupero+"</td>" +
                  "<td>"+obj[i].peso+"</td>" +
+                 "<td></td>" +
+
+                 "</tr>");
+     
+         }
+
+         }, 
+         error: function(xhr, status, error){
+            alert(error);
+
+         }   
+        });
+}
+
+
+function dio(){
+    alert("ok")
+}
+function getAllMuscles(){
+
+   // event.preventDefault();
+    $("#tablebody").empty();
+
+    $.ajax(
+        {     
+         type:    'post',
+         url:     '/Pallestra/script/getMuscles.php',
+         data:    '&username=' +$('#nickname').text(),
+         //dataType: 'json',
+         success: function(data) 
+         {
+
+         var obj = $.parseJSON(data);//parse JSON
+         $("#tablebody").empty();
+
+
+         for (var i in obj) {
+            var a = +i+1;
+
+            $("#tablebody").append("<tr>" +
+                 " <th scope=\"row\">"+a+"</th>" +
+                 "<td>"+obj[i].nome+"</td>" +
+                 "<td>"+obj[i].muscolo+"</td>" +
+                 "<td>"+obj[i].ripetizioni+"</td>" +
+                 "<td>"+obj[i].serie+"</td>" +
+                 "<td>"+obj[i].recupero+"</td>" +
+                 "<td>"+obj[i].peso+"</td>" +
+                 "<td></td>" +
+
                  "</tr>");
      
          }
