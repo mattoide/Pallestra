@@ -5,6 +5,7 @@ ini_set('display_errors','On');
 
 require_once('../dbConn.php');
 
+
 $username = $_POST["username"];
 $password = $_POST["password"];
 
@@ -16,7 +17,7 @@ $execquery = $stmt->execute();
 
 $stmt->store_result();
 
-$stmt->bind_result($nickname, $pass, $id_scheda, $name, $surname, $email);
+$stmt->bind_result($nickname, $name, $surname, $email, $password);
 
 if($execquery == false)
 {
