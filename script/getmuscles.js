@@ -137,7 +137,7 @@ function getTronco(event){
 function dio(){
     alert("ok")
 }
-function getAllMuscles(){
+function getAllMuscles(){ 
 
    // event.preventDefault();
     $("#tablebody").empty();
